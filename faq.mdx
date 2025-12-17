@@ -1,0 +1,122 @@
+---
+title: Frequently Asked Questions
+description: Answers to common queries about learn Documentation. Find quick resolutions to typical user concerns and best practices for effective use.
+---
+
+## Overview
+
+You encounter common questions when using learn Documentation. This page addresses account management, document sharing, mobile access, and data security. Expand the sections below for detailed answers and actionable steps.
+
+<Columns cols={2}>
+  <Card title="Account Management" icon="user" href="#account">
+    Manage your profile, update settings, and handle subscriptions.
+  </Card>
+  <Card title="Document Sharing" icon="share-2" href="#sharing">
+    Share docs securely with teams or publicly.
+  </Card>
+  <Card title="Mobile Access" icon="smartphone" href="#mobile">
+    Access your docs on the go across devices.
+  </Card>
+  <Card title="Data Security" icon="shield" href="#security">
+    Protect your content with best practices.
+  </Card>
+</Columns>
+
+## Account Management
+
+<ExpandableGroup>
+  <Expandable title="How do you create or update your account?">
+    Follow these steps to set up or modify your account.
+
+    <Steps>
+      <Step title="Sign Up" icon="user-plus">
+        Visit the dashboard and click "Create Account". Enter your email and a strong password.
+      </Step>
+      <Step title="Verify Email" icon="mail">
+        Check your inbox for the verification link from `no-reply@learn-docs.com`.
+      </Step>
+      <Step title="Update Profile" icon="edit-3">
+        Go to Settings > Profile. Update your name, avatar, and preferences.
+      </Step>
+    </Steps>
+
+    <Callout kind="tip">
+      Enable two-factor authentication (2FA) immediately after signup for added security.
+    </Callout>
+  </Expandable>
+
+  <Expandable title="What if you forget your password?">
+    Use the "Forgot Password" link on the login page. Enter your email to receive a reset link valid for 15 minutes. Change to a password with at least 12 characters, including uppercase, numbers, and symbols.
+  </Expandable>
+</ExpandableGroup>
+
+## Document Sharing
+
+<Expandable title="How do you share documents with your team?">
+  Generate shareable links or invite collaborators directly.
+
+  <Tabs>
+    <Tab title="Public Link" icon="link">
+      In the document editor, click Share > Generate Link. Set permissions to "View" or "Edit". Copy the URL like `https://learn-docs.com/project/docs/abc123`.
+    </Tab>
+    <Tab title="Team Invite" icon="users">
+      Go to Share > Invite Members. Enter emails and select roles: Viewer, Editor, or Admin.
+    </Tab>
+  </Tabs>
+
+  <CodeGroup tabs="JavaScript,cURL">
+  ```javascript
+  // Embed doc in your app
+  const embedUrl = 'https://learn-docs.com/embed/abc123';
+  iframe.src = embedUrl;
+  ```
+  ```bash
+  # API to share doc
+  curl -X POST https://api.learn-docs.com/v1/docs/abc123/share \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -d '{"email": "user@example.com", "role": "editor"}'
+  ```
+  </CodeGroup>
+</Expandable>
+
+## Mobile Access
+
+Access your documentation seamlessly on mobile devices.
+
+<Tabs>
+  <Tab title="iOS" icon="apple">
+    Download the learn app from the App Store. Log in with your credentials. Sync happens automatically over Wi-Fi.
+  </Tab>
+  <Tab title="Android" icon="android">
+    Install from Google Play. Enable notifications for updates. Use offline mode for cached docs.
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Mobile apps support full editing. For best performance, keep your app updated to the latest version.
+</Callout>
+
+## Data Security
+
+<ExpandableGroup>
+  <Expandable title="How does learn protect your data?" default-open="true">
+    learn uses AES-256 encryption at rest and TLS 1.3 in transit. Regular security audits occur quarterly. You control access with granular permissions.
+  </Expandable>
+
+  <Expandable title="What steps do you take to secure your account?">
+    <ol>
+      <li>Use strong, unique passwords.</li>
+      <li>Enable 2FA in Settings > Security.</li>
+      <li>Review active sessions and revoke suspicious ones.</li>
+      <li>Avoid sharing `YOUR_API_KEY` publicly.</li>
+    </ol>
+
+    <Callout kind="danger">
+      Never commit secrets to public repositories. Use environment variables instead.
+    </Callout>
+  </Expandable>
+</ExpandableGroup>
+
+## Additional Resources
+
+For more help, check the <Card title="Support Portal" icon="help-circle" href="https://support.learn-docs.com" target="_blank">community forums and tickets</Card>. Contact support@learn-docs.com for enterprise queries.

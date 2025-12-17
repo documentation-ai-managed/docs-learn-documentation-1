@@ -1,0 +1,127 @@
+---
+title: Changelog
+description: Track the evolution of learn Documentation with our release notes. This page lists updates, new features, and improvements over time.
+---
+
+## Overview
+
+Stay informed about every update to learn Documentation. You access release notes here, organized by version with clear breakdowns of new features, improvements, bug fixes, and deprecations. Use the components below to navigate changes quickly and upgrade your setup.
+
+<Columns cols={3}>
+  <Card title="New Features" icon="sparkles" href="#v1-2-0">
+    Discover the latest additions that enhance your documentation experience.
+  </Card>
+  <Card title="Bug Fixes" icon="bug" href="#v1-1-0">
+    Review fixes for stability and performance issues.
+  </Card>
+  <Card title="Upgrade Guide" icon="arrow-up" href="#upgrade">
+    Follow steps to update your project seamlessly.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Subscribe to our RSS feed or GitHub notifications to get instant alerts on new releases.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added `<Tabs>` and `<CodeGroup>` components for multi-language and platform-specific examples.
+- Introduced `<Columns>` layout for responsive card grids in documentation pages.
+
+## Improvements
+
+- Enhanced MDX parsing with better support for nested code blocks using 4 backticks.
+- Optimized rendering performance for pages with 5+ components.
+
+## Bug Fixes
+
+- Fixed escaping issues with `{` and `}` characters in prose text.
+- Resolved heading hierarchy warnings when skipping from H2 to H4.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launched `<Update>` component for changelog entries with tag support.
+- Enabled `<ParamField>` and `<ResponseField>` for API documentation sidebars.
+
+## Bug Fixes
+
+- Corrected attribute parsing for double-quoted strings in JSX components.
+- Patched self-closing tag errors in container components like `<Steps>`.
+
+## Deprecations
+
+- `<Mermaid>` JSX component deprecated; use mermaid code blocks only.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core MDX writer agent with strict parsing rules for error-free output.
+- Integrated 15+ components including `<Callout>`, `<Card>`, `<Steps>`, and `<Expandable>`.
+
+## Breaking Changes
+
+- Removed H1 support in body content; use frontmatter `title` exclusively.
+- Enforced PascalCase for all component names.
+
+</Update>
+
+## Upgrade Guide
+
+Follow these steps to update learn Documentation to the latest version.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run the version check command in your project root.
+    
+    <CodeGroup tabs="npm,yarn">
+    ````bash
+    npm list learn-docs
+    ````
+    ````bash
+    yarn list learn-docs
+    ````
+    </CodeGroup>
+  </Step>
+  
+  <Step title="Install Latest" icon="download">
+    Update to the newest release.
+    
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm install learn-docs@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="package">
+        ```bash
+        yarn add learn-docs@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  
+  <Step title="Verify Changes" icon="check-circle">
+    Review your MDX files for deprecated syntax and test rendering.
+    
+    <Callout kind="alert">
+      Backup your `docs/` folder before upgrading.
+    </Callout>
+  </Step>
+</Steps>
+
+<Expandable title="Older Releases" default-open="false">
+  View full history on GitHub releases page. Key highlights include v0.9.0 with initial `<Request>`/`<Response>` support.
+</Expandable>
+
+You now run the most current version. Report issues via GitHub if you encounter parsing errors during migration.

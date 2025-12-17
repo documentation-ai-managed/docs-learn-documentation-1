@@ -1,0 +1,137 @@
+---
+title: Configuration and Customization
+description: Customize your learn Documentation space to fit your project's needs. Learn how to apply branding, set up integrations, and configure workspace settings.
+---
+
+## Overview
+
+Tailor your learn Documentation workspace to match your brand and workflow. You apply custom colors, manage user permissions, connect integrations, and handle data exports or imports through simple settings. Start with branding to set your `{brandColor}` like `#3B82F6`, then configure access and tools.
+
+<Columns cols={3}>
+  <Card title="Branding" icon="palette" href="#applying-brand-colors-and-themes">
+    Set colors and themes.
+  </Card>
+  <Card title="Permissions" icon="shield" href="#workspace-permissions">
+    Control user access.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integration-options">
+    Connect external services.
+  </Card>
+</Columns>
+
+## Applying Brand Colors and Themes
+
+Customize your documentation's appearance to reflect your identity. Update the primary color, logos, and fonts in the workspace settings.
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to **Workspace > Settings** in your dashboard.
+  </Step>
+  <Step title="Update Brand Color" icon="palette">
+    Enter your hex code, such as `#3B82F6`, in the **Brand Color** field.
+  </Step>
+  <Step title="Apply Theme" icon="save">
+    Select a theme preset and click **Apply Changes**. Preview updates live.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Test your `{brandColor}` across light and dark modes to ensure readability.
+</Callout>
+
+For advanced customization, edit the config file:
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "branding": {
+      "primaryColor": "#3B82F6",
+      "logoUrl": "https://your-domain.com/logo.svg",
+      "fontFamily": "Inter, sans-serif"
+    }
+  }
+  ```
+  ```yaml
+  branding:
+    primaryColor: "#3B82F6"
+    logoUrl: https://your-domain.com/logo.svg
+    fontFamily: Inter, sans-serif
+  ```
+</CodeGroup>
+
+## Workspace Permissions
+
+Manage who can view, edit, or administer your documentation. Assign roles at the workspace or document level.
+
+| Role          | View | Edit | Admin | Description                          |
+|---------------|------|------|-------|--------------------------------------|
+| Viewer        | ✅   | ❌   | ❌    | Read-only access to published docs. |
+| Editor        | ✅   | ✅   | ❌    | Edit content and settings.          |
+| Admin         | ✅   | ✅   | ✅    | Full control, including users.      |
+
+<Expandable title="Advanced Permission Rules" default-open="false">
+  Use environment variables for granular control:
+
+  ```bash
+  export LEARN_EDITOR_GROUPS="team:developers,team:design"
+  export LEARN_VIEWER_ACCESS="public"
+  ```
+
+  Restart your workspace after changes.
+</Expandable>
+
+## Integration Options
+
+Connect learn Documentation to your tools for seamless workflows. Choose from GitHub sync, Slack notifications, or analytics.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Sync repositories automatically.
+
+    <Steps>
+      <Step title="Connect Repo">
+        Paste your repo URL: `https://github.com/your-org/learn-docs`.
+      </Step>
+      <Step title="Set Webhook">
+        Add webhook endpoint: `https://your-learn-instance.com/webhook/github`.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Slack" icon="message-circle">
+    Send update notifications.
+
+    ```javascript
+    // Example Slack payload
+    const payload = {
+      channel: "#docs-updates",
+      text: "New doc published: Configuration Guide"
+    };
+    ```
+  </Tab>
+  <Tab title="Analytics" icon="bar-chart-3">
+    Track page views.
+
+    <CodeGroup tabs="Google Analytics,Custom">
+      ```javascript
+      gtag('config', 'G-XXXXXXXXXX');
+      ```
+      ```javascript
+      window.learnAnalytics = { track: (event) => console.log(event) };
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Export and Import Settings
+
+Backup or migrate your content easily. Export to Markdown, PDF, or JSON; import from ZIP archives.
+
+1. Go to **Workspace > Export**.
+2. Select format and download.
+3. For import, upload files via **Import** tab.
+
+<Callout kind="info">
+  Exports include all versions and attachments up to 500MB.
+</Callout>
+
+Your customized learn Documentation workspace now aligns perfectly with your project. Review changes in preview mode before publishing.

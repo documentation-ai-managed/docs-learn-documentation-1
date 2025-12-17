@@ -1,0 +1,123 @@
+---
+title: Quickstart Guide
+description: Get up and running with learn Documentation in minutes. This guide covers initial setup and creating your first documentation page.
+---
+
+## Overview
+
+Start building your documentation with learn Documentation today. Follow these steps to create an account, set up your space, add your first page, and navigate effectively. You complete the process in under five minutes.
+
+<Callout kind="tip">
+  Use your brand color `#3B82F6` in custom themes for a consistent look.
+</Callout>
+
+## Create an Account
+
+Sign up quickly to access your documentation space.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="globe">
+    Go to the [learn Documentation homepage](https://learn-docs.com) and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, create a password, and verify your account via email.
+  </Step>
+  <Step title="Complete Setup" icon="check-circle">
+    Choose a workspace name like `my-project-docs`.
+  </Step>
+</Steps>
+
+## Set Up Your Documentation Space
+
+Configure your space for your project needs.
+
+<Tabs>
+  <Tab title="Web UI" icon="browser">
+    From the dashboard, select **New Space** and enter details:
+    
+    - Name: `API Reference`
+    - Description: `Documentation for our REST API`
+    
+    Enable features like search and versioning.
+  </Tab>
+  <Tab title="CLI" icon="terminal">
+    Install the CLI and initialize:
+    
+    ```bash
+    npm install -g @learn/docs-cli
+    learn-docs init my-space
+    ```
+    
+    Edit `learn-docs.json`:
+    
+    ```json
+    {
+      "name": "My Space",
+      "brandColor": "#3B82F6"
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Add Your First Page
+
+Create a `quickstart.mdx` file in your space root.
+
+<CodeGroup tabs="MDX,YAML">
+  ```mdx
+  ---
+  title: Welcome
+  description: Your first documentation page.
+  ---
+  
+  ## Hello World
+  
+  Start writing your docs here.
+  ```
+  ```yaml
+  # frontmatter.yaml
+  title: Welcome
+  description: Your first page.
+  ```
+</CodeGroup>
+
+Preview and publish from the editor. Use the `{title}` variable in templates for dynamic content.
+
+<Callout kind="info">
+  Always include YAML frontmatter for proper rendering. Avoid blank lines inside it.
+</Callout>
+
+## Basic Navigation
+
+Master the interface to manage your docs efficiently.
+
+<Columns cols={2}>
+  <Card title="Sidebar Menu" icon="menu" href="/docs/sidebar">
+    Access pages, spaces, and settings quickly.
+  </Card>
+  <Card title="Search Bar" icon="search" href="/docs/search">
+    Find content across your documentation.
+  </Card>
+  <Card title="Version Switcher" icon="git-branch" href="/docs/versions">
+    Toggle between published versions.
+  </Card>
+  <Card title="Edit Mode" icon="edit-3" href="/docs/editor">
+    Inline editing for rapid updates.
+  </Card>
+</Columns>
+
+## Next Steps
+
+Explore advanced features:
+
+<Expandable title="Customize Themes" default-open="false">
+  Update your space settings:
+  
+  ```css
+  :root {
+    --brand-color: #3B82F6;
+  }
+  ```
+</Expandable>
+
+Build more pages, invite collaborators, and deploy your site. Your documentation space now hosts professional, searchable docs.
